@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h5{
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+    h2{
+        text-align: center;
+        padding: 15px;
+        font-size: 42px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+li{
+    list-style-type: none;
+    display: inline-block;   
+    padding: 11px;
+    text-align: center;
+    align-items: center;
+}
+
+</style>
+<body >
+<h2 >OUR TEAM MEMBERS</h2>
+
+<p style="text-align: center;">Click to View Profile</p>
+
+{% for student in all_data %}
+
+<li><a href="{% url 'student_detail' student.id %}">{{student.name}}</a></li>
+
+
+{% endfor %}<hr>
+
+   <hr>
+   <h5>{{student.name}}</h5>
+   <h5>{{student.course_name}}</h5>
+   <h5>{{student.email}}</h5>
+
+</body>
+</html>
